@@ -1,0 +1,77 @@
+@topbar-height: 50px;
+@sidebar-width: 60px;
+@bgcolor: #E0E0E0;
+
+body {
+	margin: 0px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+#topbar {
+	height: @topbar-height;
+	padding: 8px;
+	border-bottom: 1px solid #CCC;
+	
+	input[type=text] {
+		width: 49%;
+		padding: 8px;
+		border: 1px solid #CCC;
+	}
+	
+	.brush-field {
+		float: right;
+	}
+}
+
+#dataset {
+	width: @sidebar-width;
+	padding: 5px;
+	
+	.attr {
+		width: 100%;
+		height: 50px;
+		margin-bottom: 5px;
+		background-color: @bgcolor;
+	}
+}
+
+#workspace {
+	position: absolute;
+	top: @topbar-height;
+	left: @sidebar-width;
+	bottom: 0px;
+	right: 0px;
+    display: flex;
+	flex-wrap: wrap;
+	
+	.panel {
+		@tag-size: 40px;
+		
+		flex: 1;
+		min-width: 45%;
+		height: 50%;
+		
+		table {
+			height: 100%;
+			width: 100%;
+		}
+		
+		.vert-attr {
+			width: 40px;
+			background-color: @bgcolor;
+			margin: 5px;
+		}
+		
+		.graph {
+			background-color: @bgcolor;
+		}
+		
+		.hor-attr {
+			height: @tag-size;
+			background-color: @bgcolor;
+		}
+	}
+}
