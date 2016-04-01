@@ -2,42 +2,41 @@
 <head>
 	<title>Data Visualization Tool Prototype in JS</title>
 	
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+	<link rel="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.6.8/dragula.css" />
 	<link rel="stylesheet/less" type="text/css" href="styles.less" />
+	<link rel="stylesheet" href="graph.css" />
 </head>
 <body>
+	
+	<div id="testGraph">
+	
+	</div>
+	
 	<div id="topbar">
 		<input type="text" class="filter-field" placeholder="Filter" />
 		<input type="text" class="brush-field" placeholder="Brush" />
 	</div>
 	
 	<div id="main-layout">
-		<div id="dataset">
-			<div class="attr"></div>
-			<div class="attr"></div>
-			<div class="attr"></div>
-		</div>
+		<div id="dataattrs"></div>
 		<div id="workspace">
-			<div class="panel" id="panel-1">
-				<table cellspacing="4" cellpadding="0">
-				<tr>
-					<td class="vert-attr"><div class="tag">Vertical Attr</div></td>
-					<td class="graph">Graph</td>
-				</tr>
-				<tr>
-					<td>&nbsp;</td>
-					<td class="hor-attr">Horizontal Attr</td>
-				</tr>
-				</table>
-			</div><!--
+			<div class="panel" id="panel-1"></div><!--
 		 --><div class="panel" id="panel-2"></div><!--
 		 --><div class="panel" id="panel-3"></div><!--
 		 --><div class="panel" id="panel-4"></div>
 		</div>
 	</div>
 	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.14.7/react-dom.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dragula/3.6.8/dragula.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.6.1/less.min.js"></script>
-	<script src="
-https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.js"></script>
-	<script src="main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.16/d3.js"></script>
+	<script src="data.js"></script>
+	<script src="graph.js"></script>
+	<!--<script type="text/babel" src="main.js"></script>-->
 </body>
 </html>

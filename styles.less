@@ -4,6 +4,8 @@
 
 body {
 	margin: 0px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
 }
 
 * {
@@ -26,7 +28,7 @@ body {
 	}
 }
 
-#dataset {
+#dataattrs {
 	width: @sidebar-width;
 	padding: 5px;
 	
@@ -35,12 +37,14 @@ body {
 		height: 50px;
 		margin-bottom: 5px;
 		background-color: @bgcolor;
+		text-align: center;
+		vertical-align: middle;
 	}
 }
 
 #workspace {
 	position: absolute;
-	top: @topbar-height;
+	top: 500 + @topbar-height;
 	left: @sidebar-width;
 	bottom: 0px;
 	right: 0px;
