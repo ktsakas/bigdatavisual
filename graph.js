@@ -1,6 +1,7 @@
 var freqs = [100, 200, 300, 400, 500];
 
 function BarChart (elm) {
+	this.svg = null;
 	this.canvas = null;
 	this.canvasW = 400;
 	this.canvasH = 300;
@@ -14,19 +15,21 @@ function BarChart (elm) {
 
 BarChart.prototype = {
 	init: function () {
-		this.canvas = d3.select(this.elm)
+		var svg = this.svg = d3.select(this.elm)
 			.append("svg")
 			.attr("width", this.canvasW)
-			.attr("height", this.canvasH)
-		.append("g")
+			.attr("height", this.canvasH);
+		
+		this.canvas = this.svg.append("g")
 			.attr("transform", "translate(" + this.margin.left + "," + this.margin.top + ")");
 		
 		var canvas = this.canvas;
-		this.canvas
+		this.svg
 			.on("mousedown", function () {
 				var p = d3.mouse(this);
+				console.log(p);
 
-				canvas.append("rect")
+				svg.append("rect")
 					.attr({
 						class: "selection",
 						x: p[0],
@@ -36,7 +39,8 @@ BarChart.prototype = {
 					})
 			})
 			.on("mousemove", function () {
-				var s = canvas.select("rect.selection");
+				console.log("move");
+				var s = svg.select("rect.selection");
 
 				if (s.empty()) return;
 			
@@ -69,8 +73,8 @@ BarChart.prototype = {
 				s.attr(d);
 			})
 			.on("mouseup", function () {
-				canvas.select("rect.selection").remove();
-			});		
+				svg.select("rect.selection").remove();
+			});
 		
 		var width = this.width;
 		var height = this.height;
